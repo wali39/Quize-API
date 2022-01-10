@@ -3,6 +3,9 @@ const router = express.Router();
 const Question = require("./models/Question");
 
 //routes for all questions
+router.get("/", (req, res) => {
+  res.redirect("/questions");
+});
 router.get("/questions", async (req, res) => {
   try {
     const questions = await Question.find();
